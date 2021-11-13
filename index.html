@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/checkBox.css">
+    <script src="https://kit.fontawesome.com/50ecca59bf.js" crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="chatbox">
+            <div class="top-bar">
+                <div class="avatar">
+                   <img src="./img/waifuAvatar.jpg" alt="" class="">
+                </div>
+                <div class="name">Kitagawa Marin</div>
+                <div class="icons">
+                   <i class="fas fa-phone"></i>
+                   <i class="fa fas fa-video-camera"></i> 
+                </div>
+                <div class="menu">
+                    <div class="dots"></div>
+                </div>
+            </div>
+            <div class="middle">
+                
+            
+
+                <div class="waiting typing">
+                    <div class="bubble">
+                        <div class="ellipsis one"></div>
+                        <div class="ellipsis two"></div>
+                        <div class="ellipsis three"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <div class="chat">
+                    <input type="text" placeholder="Nhập tin nhắn ...">
+                    <button><i class="fa fa-paper-plane"></i></button>
+                </div>
+            </div>
+            <div class="chatBox-option">
+                <div class="hideNotifi">
+                    <i class="fa fa-angle-double-up"></i>
+                </div>
+                <div class="login-wrap">
+                    <div class="login-html">
+                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+                        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                        <div class="login-form">
+                            <div class="sign-in-htm">
+                                <div class="group">
+                                    <label for="user" class="label userName">Username</label>
+                                    <input id="user" type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label for="pass" class="label password">Password</label>
+                                    <input id="pass" type="password" class="input" data-type="password">
+                                </div>
+                                <div class="group">
+                                    <input id="check" type="checkbox" class="check" checked>
+                                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                                </div>
+                                <div class="group">
+                                    <input type="submit" class="button signin" value="Sign In">
+                                </div>
+                               
+                            </div>
+                            <div class="sign-up-htm">
+                                <div class="group">
+                                    <label for="user" class="label ">Username</label>
+                                    <input id="user" type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <label for="pass" class="label ">Password</label>
+                                    <input id="pass" type="password" class="input" data-type="password">
+                                </div>
+                                <div class="group">
+                                    <label for="pass" class="label">Repeat Password</label>
+                                    <input id="pass" type="password" class="input" data-type="password">
+                                </div>
+                                <div class="group">
+                                    <label for="pass" class="label">Email Address</label>
+                                    <input id="pass" type="text" class="input">
+                                </div>
+                                <div class="group">
+                                    <input type="submit" class="button signup" value="Sign Up">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="close-notify"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./app/app.js"></script>
+    <script>
+          $( ".chatBox-option" ).slideUp( "slow", function() {
+                // Animation complete.
+            });
+        $( ".hideNotifi" ).click(function() {
+            $( ".chatBox-option" ).slideUp( "slow", function() {
+                // Animation complete.
+            });
+        });
+        $( ".menu" ).click(function() {
+            $( ".chatBox-option" ).slideDown( "slow", function() {
+                // Animation complete.
+            });
+        });
+        $('.close-notify').click(function() {
+            $( ".chatBox-option" ).slideUp( "slow", function() {
+                // Animation complete.
+            });
+        });
+    </script>
+</body>
+</html>
