@@ -56,7 +56,7 @@ import {setBubbleChat,$,$$,createElement,getParent,setEvent,getUser,setStyle} fr
             }
         })
     }
-    setColorPrimary(userLogin.color)
+    setColorPrimary(primaryColor)
     setEvent('.chat button',true,'click',(e)=>{
         let postStatus = true
         let inputValue = getParent(e.target,'.chat').querySelector('input').value
