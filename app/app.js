@@ -7,7 +7,7 @@ import {setBubbleChat,$,$$,createElement,getParent,setEvent,getUser,setStyle} fr
     let userLogin = cookies.read('userLogin') ? cookies.decode(cookies.read('userLogin')) : null
     let userChat = userLogin ? userLogin.chat : undefined
     let setColorPrimary = color => $(':root').style.setProperty('--primary-color',color) 
-    let primaryColor = userLogin.color
+    let primaryColor = userLogin ? userLogin.color : undefined
     let colorCode = ['#79c7c5','#fff','#e283d6','#0084ff']
     // console.log(userLogin);
     if (userLogin) {
