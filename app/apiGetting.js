@@ -1,3 +1,4 @@
+import {setBubbleChat} from './global.js'
 function sendMessage (message){
     var myHeaders = new Headers();
     myHeaders.append("content-type", "application/x-www-form-urlencoded");
