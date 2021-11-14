@@ -1,7 +1,7 @@
 import {sendMessage} from './apiGetting.js';
 import {cookie} from './setCookie.js'
 import {setBubbleChat,$,$$,createElement,getParent,setEvent,getUser,setStyle,DELAY_RELOAD} from './global.js'
-import {isEqual} from '../node_modules/lodash.isequal/index.js';
+import {isEqual} from './index.js';
 (($,$$,createElement,getParent)=>{
     $('.middle .waiting').remove()
     let cookies = cookie()
