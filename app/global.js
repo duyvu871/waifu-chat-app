@@ -1,3 +1,4 @@
+import {cookie} from './setCookie.js'
 const $ = document.querySelector.bind(document),
       $$ = document.querySelectorAll.bind(document),
       createElement = domString => new DOMParser().parseFromString(domString, 'text/html').body.firstChild,
@@ -95,12 +96,16 @@ function getUser () {
             }
         }
         ,{}),
-
+        logout(){
+            cookie().delete('userLogin')
+            location.reload()
+        }
     })
 }
 
 function scrollEnd () {
     $('.middle').scrollTop = $('.middle').scrollHeight
 }
-export {setBubbleChat, $, $$ ,setEvent ,getParent,createElement,getUser,setStyle}
+const DELAY_RELOAD = 1000
+export {setBubbleChat, $, $$ ,setEvent ,getParent,createElement,getUser,setStyle, DELAY_RELOAD}
 
