@@ -69,7 +69,7 @@ import {isEqual} from './index.js';
                     shadowData.login = getUser().login
                     shadowData.color = primaryColor
                     shadowData.status = 'on'
-                    shadowData.chat = []
+                    shadowData.chat = getUser().message
                 }
                 console.log(shadowData);
                 setTimeout(()=>{ location.reload() },DELAY_RELOAD)
@@ -107,8 +107,6 @@ import {isEqual} from './index.js';
 
     window.addEventListener("beforeunload", (event) => {
         //
-        let userLoginChecked = cookie().read('userLogin')
-        if(userLoginChecked){
             let data = {
                 login:shadowData.login,
                 color:shadowData.color,
@@ -116,7 +114,6 @@ import {isEqual} from './index.js';
                 chat:shadowData.chat,
             }
             cookies.create('userLogin',JSON.stringify(data),Date.UTC(2024,12,2))
-        }
         // event.returnValue = "There are unsaved changes. Leave now?";
       });
 
