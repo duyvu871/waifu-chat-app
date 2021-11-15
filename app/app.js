@@ -58,20 +58,18 @@ import {isEqual} from './index.js';
                 //
                 let checkDuplicate = userLogin 
                                     && userStatus === 'off' 
-                                    && isEqual(shadowData.login,userLogin.login)
+                                    && isEqual(userInfo,userLogin.login)
                                     && shadowData.color === userLogin.color
                 if(checkDuplicate) {
                     shadowData.status = 'on'
-                    console.log(1);
                   // tại đây nếu như user đăng nhập lại tài khoản đã đăng suất thì sẽ quay lại
                 }else{
                     //
-                    shadowData.login = getUser().login
+                    shadowData.login = userInfo
                     shadowData.color = primaryColor
                     shadowData.status = 'on'
                     shadowData.chat = getUser().message
                 }
-                console.log(shadowData);
                 setTimeout(()=>{ location.reload() },DELAY_RELOAD)
             }
         })
