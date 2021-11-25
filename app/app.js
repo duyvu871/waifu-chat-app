@@ -60,10 +60,11 @@ import {isEqual} from './index.js';
                                     && userStatus === 'off' 
                                     && isEqual(userInfo,userLogin.login)
                                     && shadowData.color === userLogin.color
+                                
                 if(checkDuplicate) {
                     shadowData.status = 'on'
                   // tại đây nếu như user đăng nhập lại tài khoản đã đăng suất thì sẽ quay lại
-                }else{
+                }else if(!checkDuplicate && getUser().message.length === 0){
                     //
                     shadowData.login = userInfo
                     shadowData.color = primaryColor
