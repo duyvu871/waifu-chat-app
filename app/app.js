@@ -106,11 +106,12 @@ import {isEqual} from './index.js';
 
     window.addEventListener("beforeunload", (event) => {
         //
+            let message = getUser().message
             let data = {
                 login:shadowData.login,
                 color:shadowData.color,
                 status:shadowData.status,
-                chat:shadowData.chat,
+                chat: message.length > 0 ? message : shadowData.chat,
             }
             cookies.create('userLogin',JSON.stringify(data),Date.UTC(2024,12,2))
         // event.returnValue = "There are unsaved changes. Leave now?";
