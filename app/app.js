@@ -79,10 +79,11 @@ import {isEqual} from './index.js';
                                     && userStatus === 'off' 
                                     && isEqual(userInfo,userLogin.login)
                                     && shadowData.color === userLogin.color;
+     
                 if(checkDuplicate) {
                     shadowData.status = 'on'
                   // tại đây nếu như user đăng nhập lại tài khoản đã đăng suất thì sẽ quay lại
-                }else{
+                }else if(!checkDuplicate && getUser().message.length === 0){
                     //
                     shadowData.login = userInfo;
                     shadowData.color = primaryColor;
@@ -114,14 +115,21 @@ import {isEqual} from './index.js';
 
     window.addEventListener("beforeunload", (event) => {
         //
+
             let message = getUser().message;
+
+
+
             let data = {
                 login:shadowData.login,
                 color:shadowData.color,
                 status:shadowData.status,
+
                 chat:message.length > 0 ? message : shadowData.chat,
             };
             console.log(data.chat);
+
+
             cookies.create('userLogin',JSON.stringify(data),Date.UTC(2024,12,2))
         // event.returnValue = "There are unsaved changes. Leave now?";
       });
